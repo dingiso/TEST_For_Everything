@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-08-28T09:01:15.129Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36" etag="OL9w24mrCTAJ4Llp83Of" version="13.6.5" type="github">
+<mxfile host="app.diagrams.net" modified="2020-08-28T09:08:28.229Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36" etag="UXxXJSUJCbHPRCoynCe5" version="13.6.5" type="github">
   <diagram id="yEMy7lb2OtCyVYhWc74e" name="Page-1">
-    <mxGraphModel dx="1574" dy="831" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1102" dy="533" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -166,12 +166,6 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="fY6p8MWptXcg_yQPOpdN-69" value="交&lt;br&gt;电&lt;br&gt;费" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Lucida Console;" vertex="1" parent="1">
-          <mxGeometry x="989" y="180" width="40" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="fY6p8MWptXcg_yQPOpdN-70" value="交&lt;br&gt;住&lt;br&gt;宿&lt;br&gt;费" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Lucida Console;" vertex="1" parent="1">
-          <mxGeometry x="1049" y="180" width="40" height="100" as="geometry" />
-        </mxCell>
         <mxCell id="fY6p8MWptXcg_yQPOpdN-71" value="查&lt;br&gt;看&lt;br&gt;消&lt;br&gt;息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Lucida Console;" vertex="1" parent="1">
           <mxGeometry x="1109" y="180" width="40" height="100" as="geometry" />
         </mxCell>
@@ -198,6 +192,18 @@
         </mxCell>
         <mxCell id="fY6p8MWptXcg_yQPOpdN-81" value="&lt;h2 style=&quot;font-size: 28px&quot;&gt;数&lt;br&gt;据&lt;br&gt;访&lt;br&gt;问&lt;br&gt;部分&lt;/h2&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
           <mxGeometry x="145" y="450" width="45" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="fY6p8MWptXcg_yQPOpdN-84" value="" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;dashed=1;dashPattern=1 4;fontFamily=Lucida Console;gradientColor=#d5739d;fillColor=#e6d0de;strokeColor=#996185;" vertex="1" parent="1">
+          <mxGeometry x="980" y="170" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fY6p8MWptXcg_yQPOpdN-69" value="交&lt;br&gt;电&lt;br&gt;费" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="989" y="180" width="40" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fY6p8MWptXcg_yQPOpdN-70" value="交&lt;br&gt;住&lt;br&gt;宿&lt;br&gt;费" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="1049" y="180" width="40" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fY6p8MWptXcg_yQPOpdN-85" value="缴费系统" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="145" width="60" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
