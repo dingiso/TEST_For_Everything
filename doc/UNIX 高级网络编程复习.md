@@ -85,6 +85,8 @@ bind(sockfd, (struct sockaddr *) &serv, sizeof(serv));
 
 #### Sockaddr_in6
 
+128-bits ipv6 地址
+
 ```c
 struct in6_addr {
 	uint8_t 	s6_addr[16]; /* 128-bit IPv6 address */
@@ -202,11 +204,11 @@ const char *inet_ntop(int family, const void *addrptr, char *strptr, size_t len)
 
 p - presentation , n - numeric
 
-`family` : AF_INET / AF_INET6 不支持 errno 置 EAFNOSUPPORT
+`family` : AF_INET / AF_INET6 不支持 errno= `EAFNOSUPPORT`
 
 `inet_pton` : 字符串 strptr 转换为 addrptr 二进制地址结果
 
-`inet_ntop` :  相反，len 位 strptr 大小，防止溢出 - len太小，返回空指针 errno=ENOSPC
+`inet_ntop` :  相反，len 位 strptr 大小，防止溢出 - len太小，返回空指针 errno=`ENOSPC`
 
 #### 读写函数
 
@@ -219,6 +221,145 @@ ssize_t readline(int filedes, void *buff, size_t maxlen);
 ```
 
 `readline` 每次读一个字符，极端地慢
+
+### Chapter 4
+
+基本 TCP 套接字编程
+
+#### Socket 函数
+
+```c
+#include <sys/socket.h>
+int socket(int family, int type, int protocol);
+				Returns: non-negative descriptor if OK, −1 on error
+```
+
+|                | AF_INET   | AF_INET   | AF_LOCAL | AF_ROUTE | AF_KEY |
+| -------------- | --------- | --------- | -------- | -------- | ------ |
+| SOCK_STREAM    | TCP\|SCTP | TCP\|SCTP | YES      |          |        |
+| SOCK_DGRAM     | UDP       | UDP       | YES      |          |        |
+| SOCK_SEQPACKET | SCTP      | SCTP      | YES      |          |        |
+| SOCK_RAW       | IPV4      | IPV6      |          | YES      | YES    |
+
+#### Connect 函数
+
+```c
+#include <sys/socket.h>
+int connect(int sockfd, const struct sockaddr *servaddr, socklen_t addrlen);
+									Returns: 0 if OK, −1 on error
+```
+
+client 用于与 server 连接，内核会自己选择临时端口
+
+* 75 s 无响应后返回 `ETIMEDOUT`
+* 若相应 RST 则马上返回 `ECONNREFUSED` - 指定端口没有等待连接
+* 目的不可达，返回 `EHOSTUNREACH`, `ENETUNREACH`
+
+错误
+
+* 如果给不存在的机器发送，因为没有 ARP reply , `ETIMEOUT`
+
+  ```bash
+  connect error: Connection timed out
+  ```
+  
+* 如果给未运行 server 的机器发送，收到 RST ， `ECONNREFUSED`
+  
+  ```
+  connect error: Connection refused
+  ```
+  
+* 给不可达发送， 收到 ICMP 不可达错误， `EHOSTUNREACH`
+
+  ```
+  connect error: No route to host
+  ```
+
+每次 connect 失败后，都需要关闭 sockfd 重新调用 socket 函数
+
+#### bind 函数
+
+```c
+#include <sys/socket.h>
+int bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen);
+									Returns: 0 if OK, −1 on error
+```
+
+32b ipv4 / 128b ipv6 + 16b TCP/UDP port number
+
+`Servers` 会在启动时调用 bind 端口（程序定义） ，若没有则当调用 connect 或 listen 时，内核会选择一个临时端口  或 根据 SYN 的目的地址
+
+`Client` 通常不会bind 而是 connect 时由内核根据路径选择
+
+##### IP地址
+
+wildcard 通配符
+
+ipv4 : `INADDR_ANY` 0.0.0.0，内核等到TCP连接，UDP报文发送后选择ip地址
+
+ipv6 : in6addr_any 由系统预先分配并置为`IN6ADDR_ANY_INIT`
+
+RPC  例外，会通过 端口映射器注册
+
+##### 错误
+
+`EADDRINUSE` ： `Address already in use` 地址已使用
+
+#### listen 函数
+
+**Server** ： convert unconnected socket into a passive socket 
+
+```c
+#include <sys/socket.h>
+int listen(int sockfd, int backlog);
+					Returns: 0 if OK, −1 on error
+```
+
+`backlog` : 内核队列中排队的最大连接数 
+
+调用时间： socket bind 后， accept 前
+
+为 listening socket 保持两个队列
+
+* `incomplete connection queue` 未完成连接队列 ， 未完成握手，`SYN_RCVD` 态
+* `completed connection queue`  已完成连接队列 ， 完成握手 ， `ESTABLISHED` 态
+
+两队之和不超过 backlog
+
+#### accept 函数
+
+ 返回已完成连接队列队头，如果为空，进程睡眠
+
+```c
+#include <sys/socket.h>
+int accept(int sockfd, struct sockaddr *cliaddr, socklen_t *addrlen);
+						Returns: non-negative descriptor if OK, −1 on error
+```
+
+* `sockfd` : listening socket    监听
+* `return` : connected socket 已连接
+* `cliaddr` & `addrlen` ：对端的地址和长度 
+* 一对多的关系，监听socket 保持打开，连接socket完成对一个客户的服务就关闭
+
+##### 错误
+
+* 非超级用户：
+
+  ```bash
+  bind error: Permission denied
+  ```
+
+#### fork 和 exec 函数
+
+fork 是唯一生成新进程的函数
+
+```c
+#include <unistd.h>
+pid_t fork(void);
+			Returns: 0 in child, process ID of child in parent, −1 on error
+```
+
+
 
 重点基本都要求掌握 、 5.13不要求掌握、
 
