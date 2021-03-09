@@ -359,6 +359,12 @@ pid_t fork(void);
 			Returns: 0 in child, process ID of child in parent, −1 on error
 ```
 
+#### 并发服务器
+
+父进程 listenfd 监听 ， 子进程 connfd 负责接收数据和实际操作
+
+#### close 函数
+
 
 
 重点基本都要求掌握 、 5.13不要求掌握、
