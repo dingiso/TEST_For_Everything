@@ -297,7 +297,7 @@ wildcard 通配符
 
 ipv4 : `INADDR_ANY` 0.0.0.0，内核等到TCP连接，UDP报文发送后选择ip地址
 
-ipv6 : in6addr_any 由系统预先分配并置为`IN6ADDR_ANY_INIT`
+ipv6 : `in6addr_any` 由系统预先分配并置为`IN6ADDR_ANY_INIT`
 
 RPC  例外，会通过 端口映射器注册
 
@@ -365,23 +365,276 @@ pid_t fork(void);
 
 #### close 函数
 
+```c
+#include <unistd.h>
+int close(int sockfd);
+						Returns: 0 if OK, −1 on error
+```
 
+为了方便多个进程使用套接字，它是引用计数的。
+
+内核 会 发完所有等待发送的数据，然后TCP连接终止过程
+
+如果只想发送FIN，改用`shutdown`函数
+
+#### 地址 函数
+
+```c
+#include <sys/socket.h>
+int getsockname(int sockfd, struct sockaddr *localaddr, socklen_t *addrlen);
+int getpeername(int sockfd, struct sockaddr *peeraddr, socklen_t *addrlen);
+							Both return: 0 if OK, −1 on error
+```
+
+sock 本地，peer 连接对端
 
 重点基本都要求掌握 、 5.13不要求掌握、
 
 6.9，6.20 不要求掌握
 
+### Chapter 5
+
+#### TCP Echo Server
+
+Port : 5000 - 49152
+
+#### Normal Startup 
+
+server 阻塞在  accept
+
+client  阻塞在 fgets 调用
+
+连接
+
+服务器阻塞在 read ，父进程阻塞在 accept 
+
+此时 三个进程 STAT 都是 S- sleeping
+
+**WCHAN** 父进程 wait_for_connect ,  server tcp_data_wait , client - read_chan
+
+#### Normal Termination
+
+Client ： EOF 字符（Control+D) 终止服务器
+
+客户端进入 TIME_WAIT 状态
+
+### wait & waitpid
+
+考
+
+#### accept返回前连接中止
+
+connect 后， accept 前，客户端发送 RST 报文
+
+POSIX  ： `ECONNABORTED`  - `software caused connection abort`
+
+#### 服务器进程终止
+
+服务器进程崩溃后，如果client不操作，会阻塞在fgets，输入字符后，readline因接收到FIN返回0（EOF），client 返回 ： `str_cli: server terminated prematurely` - 程序定义的并结束
+
+如果先收到了RST，会返回`ECONNRESET` -`connection reset by peer`
+
+RST 会因为并没有与该客户端连接但是接收到该客户端发送的内容而被服务器发送
+
+#### 服务器主机崩溃
+
+同上面不同的是，服务器并不会有任何反应，会有以下两种情况：
+
+* 一直没有响应 `ETIMEOUT`
+* 中间路由器判断不可达，响应一个 `destination unreachable` 的 ICMP，返回的错误是`EHOSTUNREACH`或 `ENETUNREACH`
+
+#### 服务器主机崩溃后重启
+
+当服务器主机崩溃后重启时，它的TCP丢失了崩溃前的所有连接信息，因此服务器TCP对于所收到的来自客户的数据分节响应以 一个RST
+
+#### 数据格式
+
+服务器读入换行符，所搜索的只是换行符
+
+二进制 ： `sscanf` 转换到 结构体 binary ，发送后，对方也用同样的结构体接收。
+
+大小端不同 ， 同样int型长度不同，结构体的打包方式不同 都会导致负数不行，
+
+解决方法： 发送 string ， 用 XDR（external data representation) 发送
+
+### Chapter 6
+
+#### I/O Model
+
+分为两个部分 ： 等待对端发送数据 ，将数据从内核拷贝到用户
+
+* blocking ： 调用接收函数后就一直等到两步都完成在返回
+* Nonblocking ：第一阶段不断循环call，知道收到完整包
+* Multiplexing：第一步调用select，直到返回readable，然后调用recvfrom完成第二步
+  * 好处： 可以等待**多个**描述符
+* Signal-Driven: 调用后立即返回，signal handler 会在 data 准备好后发出信号，调用recvfrom完成第二步
+* Asynchronous：告知内核启动某个操作， 并让内核在两步操作 完成后通知我们
+
+#### select 函数
+
+告诉内核等待多个事件，有时间发生或Timeout后唤醒他
+
+```c
+#include <sys/select.h>
+#include <sys/time.h>
+int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *exceptset,
+									const struct timeval *timeout);
+	Returns: positive count of ready descriptors, 0 on timeout, −1 on error
+```
+
+* `maxfdp1`，待测试的最大描述符值+1
+* `set` ： 告诉内核 what descriptors we are interested in ，不关心设为空，三个参数都是 value-result 类型的，调用时为关心的描述符的值，返回时指示哪些描述符已就绪
+  * `readset` :  Any of the descriptors in the readset are ready for reading
+  * `writeset`: Any of the descriptors in the writeset are ready for reading
+  * `exceptset` : Any of the descriptors in the exceptset have an exception condition pending
+* `timeout` : how long to wait - 信号中断 - 不准
+  * 设置为空 ：永远等待
+  * 值：固定时间
+  * 0：根本不等待- 轮询（polling）
+* `Returns` ：就绪的数目，timeout=0，error=-1
+* 这是系统函数，descriptor 和 socket 无关，socket 可以 select 任意 descriptor
+* 错误处理 - 不考
+
+##### fd_set 数据结构
+
+每一位代表一个描述符，每一bit为
+
+```c
+void FD_ZERO(fd_set *fdset); /* clear all bits in fdset */
+void FD_SET(int fd, fd_set *fdset); /* turn on the bit for fd in fdset */
+void FD_CLR(int fd, fd_set *fdset); /* turn off the bit for fd in fdset */
+int FD_ISSET(int fd, fd_set *fdset); /* is the bit for fd on in fdset ? */
+```
+
+* 利用 `FD_ZERO` 进行初始化十分重要,因为是 value-result值会变化
+* `FD_SETSIZE` : 1024
+
+##### 读 ready 的条件
+
+* 收到的数据高于 low-water 低水位了
+* 连接关闭了，read 返回 0 （EOF）
+* 是监听套接字，且有已完成的连接 ？
+* 套接字有错误待处理，返回 -1 ， errno 设置成确切的错误条件
+
+##### 写 ready 的条件
+
+* 已连接（udp不需要），可写空间超过 low-water 
+* 写半边关闭了 （有未完成发送的数据，要发送出去）
+* non-blocking connect 建立了连接或失败了
+* 套接字有错误待处理，返回 -1 ， errno 设置成确切的错误条件
+
+##### exceptiong ready
+
+如果一个套接字存在带外数据或者仍处于带外标记，那么它有异常条件待处理
+
+#### str_cli 
+
+阻塞在 select ，将原本的待前后顺序的阻塞，变成同时的阻塞
+
+#### shutdown
+
+给服务器发送一个FIN，告诉它我们已经完成了数据发送，但是 仍然保持套接字描述符打开以便读取
+
+```c
+#include <sys/socket.h>
+int shutdown(int sockfd, int howto);
+					Returns: 0 if OK, −1 on error
+```
+
+* 不动引用计数就激发TCP的正常连接终止序列
+* close终止读和写两个方向的数据传送，shutdown 还可以继续读
+* 三种可选项
+  * `SHUT_RD` ：关闭连接的读这一半
+  * `SHUT_WR`：关闭连接的写这一半
+  * `SHUT_RDWR`：连接的读半部和写半部都关闭
+
+#### str_cli  pipeline版
+
+加入 shutdown ，模拟先连续发送数据，关闭写半部，然后再连续接收返回数据的pipeline操作
+
+#### TCP echo 程序- select 版
+
+`client` 数组存储已连接accept描述符的值
+
+省去了 fork 新进程的开销
+
+rset 数组保存 0-stdin，1-stdout，2-stderr ，3-- 都是已连接描述符
+
+* 客户发送 FIN，4变为可读read将返回0。关闭该套接字并把client[0]的值置为-1，把描述符集中描述符4的位设置为0。注意，**maxfd的值没有改变**。
+
 ### Chapter 7
 
-​	sockopt :掌握 7.2 原理 -  SO_LINGER / SO_KEEPALIVE / SO_DONTROUTE
+#### _sockopt 函数
+
+```c
+#include <sys/socket.h>
+int getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optlen);
+int setsockopt(int sockfd, int level, int optname, const void *optval,
+socklen_t optlen);
+									Both return: 0 if OK, −1 on error
+```
+
+* sockfd ： 打开的套接字描述符
+* level ：指代系统中解释该选项的代码
+* optval ：存储option的数据结构 - 是标志0为不启用，值为启用
+* optlen ：长度 - value-result
+
+
+
+sockopt :掌握 7.2 原理 -  SO_LINGER / SO_KEEPALIVE / SO_DONTROUTE
+
+##### SO_KEEPALIVE
+
+保活
+
+##### SO_LINGER ？
+
+关闭 close 时是否丢弃保留在套接字发送缓冲区中的任何数据，
+
+设置正的延滞时间
+
+##### SO_DONTROUTE
+
+是否绕过下层协议的路由机制
 
  	IP : IP_HDRINCL / IP_TTL 
 
-​	TCP : TCP_MAXSEG
+##### IP_HDRINCL
+
+设置了就需要自己构建IP头
+
+**IP_TTL**
+
+设置和获取系统用在从某个给定套接字的默认TTL值
+
+##### TCP : TCP_MAXSEG
+
+允许我们获取或设置TCP连接的最大分节大小
+
+SYN中通告的MSS
 
 ### Chapter 8
 
 ​	8.1 图 ， 并发程序设计 - 重点注意区别
+
+`sendto()` `recvfrom()`
+
+```c
+#include <sys/socket.h>
+ssize_t recvfrom(int sockfd, void *buff, size_t nbytes, int flags,
+					struct sockaddr *from, socklen_t *addrlen);
+ssize_t sendto(int sockfd, const void *buff, size_t nbytes, int flags,
+					const struct sockaddr *to, socklen_t addrlen);
+			Both return: number of bytes read or written if OK, −1 on error
+```
+
+echo 程序
+
+```c
+Socket(AF_INET, SOCK_DGRAM, 0);
+```
+
+
 
 ### Chapter 11
 
@@ -408,3 +661,33 @@ pid_t fork(void);
 A.3 C.1  netstat tcpdump 
 
 简答题（解释名词） ， 编程题（补充小的片段）上机+上课 ， 实验分析题（分析实验的结果）例如： 服务端没起来 报什么错误
+
+最开始 那个 **带函数的函数** 
+
+## 问题
+
+P180，P165，LINGER 的意思是什么
+
+
+
+ioctl  实现 sockopt 进行读写操作 - 了解功能
+
+函数原型 ： 名字 + 参数
+
+,在中文课本589页28行-34行,老师可以再讲讲吗
+
+ping ， recvmsg 如果被中断 `EINTR`，continue 重新执行，函数重启
+
+5.10 wait / waitpid 要求
+
+server ， server host 情况
+
+raw socket 适用于什么情况 routing 、key
+
+29 introduction
+
+信号处理函数  5 章 signal handler
+
+signal driven 不要求
+
+tcp函数的顺序图
