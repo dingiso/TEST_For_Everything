@@ -420,7 +420,17 @@ Client ： EOF 字符（Control+D) 终止服务器
 
 ### wait & waitpid
 
-考
+```c
+#include <sys/wait.h>
+pid_t wait(int *statloc);
+pid_t waitpid(pid_t pid, int *statloc, int options);
+						Both return: process ID if OK, 0 or −1 on error
+```
+
+处理已终止的子进程
+
+* 返回值： 已终止子进程的进程ID号，通过statloc指针返回的子进程终止状态（一个整数）
+* 
 
 #### accept返回前连接中止
 
@@ -634,17 +644,63 @@ echo 程序
 Socket(AF_INET, SOCK_DGRAM, 0);
 ```
 
+#### 服务器进程未运行
 
+返回 ICMP 异步错误
+
+sendto成功返回仅表示接口输出队列中有存放数据报的空间
+
+仅在进程已将其UDP套接字**连接**到**一**个对端后，这些异步错误才返回给进程
+
+#### connect
+
+* 不需要再指定 目的IP和端口号
+* 不用recvfrom 用 read 就行
+* 返回异步错误
 
 ### Chapter 11
 
 ​	简单前面部分 DNS 操作 11.3、11.4、11.5
 
+使用 UDP 查询，如果答案太长，超出了UDP承载能力，换成TCP
+
+#### gethostbyname
+
+```c
+#include <netdb.h>
+struct hostent *gethostbyname(const char *hostname);
+			Returns: non-null pointer if OK, NULL on error with h_errno set
+```
+
+只能返回ipv4，getaddrinfo 能够处理4和6
+
+#### gethostbyaddr
+
+```c
+#include <netdb.h>
+struct hostent *gethostbyaddr(const char *addr, socklen_t len, int family);
+			Returns: non-null pointer if OK, NULL on error with h_errno set
+```
+
+```c
+#include <netdb.h>
+struct servent *getservbyname(const char *servname, const char *protoname);
+Returns: non-null pointer if OK, NULL on erro
+
+#include <netdb.h>
+struct servent *getservbyport(int port, const char *protoname);
+Returns: non-null pointer if OK, NULL on error
+```
+
+
+
 ## Part 3 Advanced Sockets
 
 12，13，14，15 ，17，18.5,20,21,22,23,24，30，31不考  Daemon Process 了解一下
 
-19 Introduction
+19 Introduction 
+
+特权  SA ， SADB
 
 25 掌握，结合第 5 章看
 
@@ -654,9 +710,20 @@ Socket(AF_INET, SOCK_DGRAM, 0);
 
 28  重点掌握
 
+读写ICMP，读写非内核处理的协议段的数据报，构建ip首部
+
+```c
+sockfd = socket(AF_INET, SOCK_RAW, protocol)
+// 例 ： protocol IPPROTO_ICMP
+// 开启 IP_HDRINCL
+const int on = 1;
+if (setsockopt(sockfd, IPPROTO_IP, IP_HDRINCL, &on, sizeof(on)) < 0)
+// 出错处理
+```
+
 29 掌握 基本概念，如何抓包
 
-
+libpcap 公开分组捕获函数库
 
 A.3 C.1  netstat tcpdump 
 
@@ -674,8 +741,6 @@ ioctl  实现 sockopt 进行读写操作 - 了解功能
 
 函数原型 ： 名字 + 参数
 
-,在中文课本589页28行-34行,老师可以再讲讲吗
-
 ping ， recvmsg 如果被中断 `EINTR`，continue 重新执行，函数重启
 
 5.10 wait / waitpid 要求
@@ -691,3 +756,6 @@ raw socket 适用于什么情况 routing 、key
 signal driven 不要求
 
 tcp函数的顺序图
+
+
+
