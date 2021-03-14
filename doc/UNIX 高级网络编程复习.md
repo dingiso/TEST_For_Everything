@@ -81,7 +81,7 @@ bind(sockfd, (struct sockaddr *) &serv, sizeof(serv));
 
 用于定义函数时适配各种不同类型的地址结构，
 
-若不转换，编译器报 `warning: passign arg 2 of 'bind' from incompatible pointer type`
+若不转换，编译器报 `warning: passing arg 2 of 'bind' from incompatible pointer type`
 
 #### Sockaddr_in6
 
@@ -204,7 +204,7 @@ const char *inet_ntop(int family, const void *addrptr, char *strptr, size_t len)
 
 p - presentation , n - numeric
 
-`family` : AF_INET / AF_INET6 不支持 errno= `EAFNOSUPPORT`
+`family` : AF_INET / AF_INET6 不支持 errno= `EAFNOSUPPORT`   
 
 `inet_pton` : 字符串 strptr 转换为 addrptr 二进制地址结果
 
@@ -234,7 +234,7 @@ int socket(int family, int type, int protocol);
 				Returns: non-negative descriptor if OK, −1 on error
 ```
 
-|                | AF_INET   | AF_INET   | AF_LOCAL | AF_ROUTE | AF_KEY |
+|                | AF_INET   | AF_INET6  | AF_LOCAL | AF_ROUTE | AF_KEY |
 | -------------- | --------- | --------- | -------- | -------- | ------ |
 | SOCK_STREAM    | TCP\|SCTP | TCP\|SCTP | YES      |          |        |
 | SOCK_DGRAM     | UDP       | UDP       | YES      |          |        |
@@ -341,7 +341,7 @@ int accept(int sockfd, struct sockaddr *cliaddr, socklen_t *addrlen);
 * `cliaddr` & `addrlen` ：对端的地址和长度 
 * 一对多的关系，监听socket 保持打开，连接socket完成对一个客户的服务就关闭
 
-##### 错误
+##### bind 错误
 
 * 非超级用户：
 
@@ -361,7 +361,7 @@ pid_t fork(void);
 
 #### 并发服务器
 
-父进程 listenfd 监听 ， 子进程 connfd 负责接收数据和实际操作
+父进程 listenfd 监听 ， 子进程 connfd 负责接收数据和实际 操作
 
 #### close 函数
 
@@ -400,7 +400,7 @@ Port : 5000 - 49152
 
 #### Normal Startup 
 
-server 阻塞在  accept
+server 阻塞在  accept （还未启动用户）
 
 client  阻塞在 fgets 调用
 
@@ -408,7 +408,7 @@ client  阻塞在 fgets 调用
 
 服务器阻塞在 read ，父进程阻塞在 accept 
 
-此时 三个进程 STAT 都是 S- sleeping
+此时 三个进程 STAT 都是 S- sleeping - （已阻塞）
 
 **WCHAN** 父进程 wait_for_connect ,  server tcp_data_wait , client - read_chan
 
@@ -417,6 +417,12 @@ client  阻塞在 fgets 调用
 Client ： EOF 字符（Control+D) 终止服务器
 
 客户端进入 TIME_WAIT 状态
+
+#### 信号处理
+
+SIGKILL & SIGSTOP 不能被捕获
+
+信号处理函数是一个仅有一个整数参数且不返回值的函数
 
 ### wait & waitpid
 
@@ -430,7 +436,7 @@ pid_t waitpid(pid_t pid, int *statloc, int options);
 处理已终止的子进程
 
 * 返回值： 已终止子进程的进程ID号，通过statloc指针返回的子进程终止状态（一个整数）
-* 
+* 对于同种类型的信号，主机只会执行一次信号处理函数
 
 #### accept返回前连接中止
 
