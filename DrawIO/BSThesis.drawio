@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-19T10:35:32.300Z" agent="5.0 (Windows)" etag="l4nGdIVLFQVobpZLeVBR" version="17.4.6" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-19T12:38:59.734Z" agent="5.0 (Windows)" etag="lZZAWPFDtPeupOkIw6wt" version="17.4.6" type="github" pages="2">
   <diagram id="nE82t7Sst-BgRWtlC8uI" name="系统结构">
     <mxGraphModel dx="865" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -13,7 +13,7 @@
         <mxCell id="rAHRE5KFRPkHDP4VCmhV-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Lucida Console;" edge="1" parent="1" source="rAHRE5KFRPkHDP4VCmhV-1" target="rAHRE5KFRPkHDP4VCmhV-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rAHRE5KFRPkHDP4VCmhV-1" value="&lt;div&gt;嵌入式二进制&lt;/div&gt;&lt;div&gt;可执行文件&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="rAHRE5KFRPkHDP4VCmhV-1" value="&lt;div&gt;嵌入式二进制&lt;/div&gt;&lt;div&gt;可执行固件&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="200" y="140" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="rAHRE5KFRPkHDP4VCmhV-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Lucida Console;" edge="1" parent="1" source="rAHRE5KFRPkHDP4VCmhV-2" target="rAHRE5KFRPkHDP4VCmhV-4">
@@ -59,6 +59,72 @@
         </mxCell>
         <mxCell id="rAHRE5KFRPkHDP4VCmhV-20" value="AFL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;fontFamily=Lucida Console;fontSize=18;" vertex="1" parent="1">
           <mxGeometry x="322" y="431" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="QO6tgRFM_uS9HsGCGXgm" name="寄存器">
+    <mxGraphModel dx="865" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="p0mA4CcjupdVkxjA83lO-1" target="p0mA4CcjupdVkxjA83lO-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="320" />
+              <mxPoint x="150" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="p0mA4CcjupdVkxjA83lO-1" target="sjK3bK2tMlIkLwq6b-C--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p0mA4CcjupdVkxjA83lO-1" value="改变状态" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="177" y="290" width="106" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="p0mA4CcjupdVkxjA83lO-2" target="p0mA4CcjupdVkxjA83lO-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="p0mA4CcjupdVkxjA83lO-2" target="sjK3bK2tMlIkLwq6b-C--4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p0mA4CcjupdVkxjA83lO-2" value="&lt;div style=&quot;font-size: 12px&quot;&gt;监测寄存器写&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="177" y="130" width="107" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="p0mA4CcjupdVkxjA83lO-4" target="p0mA4CcjupdVkxjA83lO-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="p0mA4CcjupdVkxjA83lO-4" target="p0mA4CcjupdVkxjA83lO-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="230" />
+              <mxPoint x="150" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p0mA4CcjupdVkxjA83lO-4" value="&lt;div style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;状态变化&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;条件触发&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=13;strokeWidth=1;fillColor=#fff2cc;gradientColor=#ffd966;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="170" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="sjK3bK2tMlIkLwq6b-C--1" target="sjK3bK2tMlIkLwq6b-C--3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--1" value="判别状态" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#fff2cc;gradientColor=#ffd966;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="311" y="280" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="sjK3bK2tMlIkLwq6b-C--3" target="sjK3bK2tMlIkLwq6b-C--16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--3" value="改变返回值" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="313" y="380" width="106" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" edge="1" parent="1" source="sjK3bK2tMlIkLwq6b-C--4" target="sjK3bK2tMlIkLwq6b-C--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--4" value="监测寄存器读" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="313" y="205" width="108" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--16" value="生成符号值或具体值" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="163" y="375" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
