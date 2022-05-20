@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-20T06:17:00.322Z" agent="5.0 (Windows)" etag="v4PBnpSOtG8QOsPuFAiK" version="18.0.7" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2022-05-20T14:01:31.307Z" agent="5.0 (Windows)" etag="k4HPJjcIAU9WA0N_nYhs" version="18.0.7" type="github" pages="3">
   <diagram id="nE82t7Sst-BgRWtlC8uI" name="系统结构">
     <mxGraphModel dx="716" dy="363" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -136,7 +136,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="dLi7Fgwwqg6hsa0oKMWj" name="Page-3">
+  <diagram id="dLi7Fgwwqg6hsa0oKMWj" name="简单寄存器">
     <mxGraphModel dx="593" dy="301" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
