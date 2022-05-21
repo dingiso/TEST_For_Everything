@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-21T10:27:35.121Z" agent="5.0 (Windows)" etag="919tVOQnU0mzVBHIXpyq" version="18.0.8" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-05-21T10:55:30.661Z" agent="5.0 (Windows)" etag="tI48SKUSU_KD6L6yrhrs" version="18.0.8" type="github" pages="4">
   <diagram id="nE82t7Sst-BgRWtlC8uI" name="系统结构">
     <mxGraphModel dx="1038" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -159,11 +159,17 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="5a1l8ZWmhHncDZ0eMIBK" name="Page-4">
+  <diagram id="5a1l8ZWmhHncDZ0eMIBK" name="normal-peripheral">
     <mxGraphModel dx="716" dy="363" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-40" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="401" y="320.5" width="239" height="79.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-37" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="229" width="250" height="60" as="geometry" />
+        </mxCell>
         <mxCell id="ckRPrLF6z9kvrbaR56zv-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ckRPrLF6z9kvrbaR56zv-1" target="ckRPrLF6z9kvrbaR56zv-4">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
@@ -172,17 +178,30 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-1" value="s2e 符号执行框架" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-1" value="s2e 符号执行框架" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="284.25" y="180" width="107.5" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ckRPrLF6z9kvrbaR56zv-4" target="ckRPrLF6z9kvrbaR56zv-16">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" parent="1" source="ckRPrLF6z9kvrbaR56zv-4" target="ckRPrLF6z9kvrbaR56zv-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="300" />
+              <mxPoint x="340" y="300" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-4" value="初始化数字值V" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-4" value="初始化数字值V" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="287.5" y="242" width="95" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-5" value="对V 赋值" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="352.5" width="80" height="35" as="geometry" />
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.801;entryY=0.994;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=11;" edge="1" parent="1" source="ckRPrLF6z9kvrbaR56zv-5" target="ckRPrLF6z9kvrbaR56zv-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="330" />
+              <mxPoint x="484" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-5" value="对V 赋值" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="550" y="343.5" width="80" height="35" as="geometry" />
         </mxCell>
         <mxCell id="ckRPrLF6z9kvrbaR56zv-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ckRPrLF6z9kvrbaR56zv-6" target="ckRPrLF6z9kvrbaR56zv-8">
           <mxGeometry relative="1" as="geometry">
@@ -195,7 +214,7 @@
         <mxCell id="ckRPrLF6z9kvrbaR56zv-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ckRPrLF6z9kvrbaR56zv-6" target="ckRPrLF6z9kvrbaR56zv-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-6" value="&lt;div&gt;根据内存地址&lt;/div&gt;&lt;div&gt;进行判断&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-6" value="&lt;div&gt;根据内存地址&lt;/div&gt;&lt;div&gt;进行判断&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
           <mxGeometry x="414" y="329" width="110" height="64" as="geometry" />
         </mxCell>
         <mxCell id="ckRPrLF6z9kvrbaR56zv-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ckRPrLF6z9kvrbaR56zv-8" target="ckRPrLF6z9kvrbaR56zv-1">
@@ -205,23 +224,29 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-8" value="&lt;div&gt;利用V生成具体&lt;/div&gt;&lt;div&gt;或符号值&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="414" y="240" width="96" height="40" as="geometry" />
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-8" value="&lt;div&gt;利用V生成具体&lt;/div&gt;&lt;div&gt;或符号值&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="407" y="240" width="96" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ckRPrLF6z9kvrbaR56zv-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ckRPrLF6z9kvrbaR56zv-16" target="ckRPrLF6z9kvrbaR56zv-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-16" value="传入的参数" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="275" y="301" width="120" height="120" as="geometry" />
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-16" value="传入的参数" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="288" y="300" width="95" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-17" value="寄存器内存地址" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="ckRPrLF6z9kvrbaR56zv-16">
-          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-17" value="寄存器内存地址" style="text;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="ckRPrLF6z9kvrbaR56zv-16">
+          <mxGeometry y="30" width="95" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-18" value="将要返回的寄存器值" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="ckRPrLF6z9kvrbaR56zv-16">
-          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-18" value="寄存器内的值" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="ckRPrLF6z9kvrbaR56zv-16">
+          <mxGeometry y="60" width="95" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ckRPrLF6z9kvrbaR56zv-19" value="指向 V 的指针" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="ckRPrLF6z9kvrbaR56zv-16">
-          <mxGeometry y="90" width="120" height="30" as="geometry" />
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-19" value="指向 V 的指针" style="text;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="ckRPrLF6z9kvrbaR56zv-16">
+          <mxGeometry y="90" width="95" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-38" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;监&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;控&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;函&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;数&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="500" y="229" width="32" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ckRPrLF6z9kvrbaR56zv-41" value="具体函数" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="575" y="318" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
