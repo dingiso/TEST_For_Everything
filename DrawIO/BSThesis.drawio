@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-05-22T04:35:28.193Z" agent="5.0 (Windows)" etag="nzRFjmcyvPQJkgPywwDl" version="18.1.1" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2022-05-23T08:20:16.274Z" agent="5.0 (Windows)" etag="40d2G-fvcIk8JVe7dTj-" version="18.1.1" type="github" pages="6">
   <diagram id="nE82t7Sst-BgRWtlC8uI" name="系统结构">
-    <mxGraphModel dx="1038" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -65,8 +65,8 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="QO6tgRFM_uS9HsGCGXgm" name="寄存器">
-    <mxGraphModel dx="1038" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram id="QO6tgRFM_uS9HsGCGXgm" name="stateRegs">
+    <mxGraphModel dx="1038" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -137,7 +137,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="dLi7Fgwwqg6hsa0oKMWj" name="简单寄存器">
-    <mxGraphModel dx="1038" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -160,7 +160,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="5a1l8ZWmhHncDZ0eMIBK" name="normal-peripheral">
-    <mxGraphModel dx="1038" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
