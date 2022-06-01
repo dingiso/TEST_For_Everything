@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-01T02:49:38.375Z" agent="5.0 (Windows)" etag="I75C5b6CM6QWckRMo6eT" version="18.1.3" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2022-06-01T02:55:15.944Z" agent="5.0 (Windows)" etag="wo7UNtjDImWtGp5R0uVk" version="18.1.3" type="github" pages="6">
   <diagram id="nE82t7Sst-BgRWtlC8uI" name="系统结构">
     <mxGraphModel dx="1221" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -77,7 +77,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="QO6tgRFM_uS9HsGCGXgm" name="stateRegs">
-    <mxGraphModel dx="1038" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -92,7 +92,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="p0mA4CcjupdVkxjA83lO-1" value="改变状态" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="p0mA4CcjupdVkxjA83lO-1" value="改变状态" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="181.25" y="245" width="74.5" height="30" as="geometry" />
         </mxCell>
         <mxCell id="sjK3bK2tMlIkLwq6b-C--5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Lucida Console;fontSize=12;" parent="1" source="p0mA4CcjupdVkxjA83lO-2" target="p0mA4CcjupdVkxjA83lO-4" edge="1">
@@ -101,7 +101,7 @@
         <mxCell id="sjK3bK2tMlIkLwq6b-C--14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" parent="1" source="p0mA4CcjupdVkxjA83lO-2" target="sjK3bK2tMlIkLwq6b-C--4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p0mA4CcjupdVkxjA83lO-2" value="&lt;div style=&quot;font-size: 12px&quot;&gt;监测寄存器写&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="p0mA4CcjupdVkxjA83lO-2" value="&lt;div style=&quot;font-size: 12px&quot;&gt;监测寄存器写&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="177" y="130" width="83" height="30" as="geometry" />
         </mxCell>
         <mxCell id="sjK3bK2tMlIkLwq6b-C--6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Lucida Console;fontSize=12;" parent="1" source="p0mA4CcjupdVkxjA83lO-4" target="p0mA4CcjupdVkxjA83lO-1" edge="1">
@@ -120,51 +120,51 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="p0mA4CcjupdVkxjA83lO-4" value="&lt;div style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;状态变化&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;条件触发&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=13;strokeWidth=1;fillColor=#fff2cc;gradientColor=#ffd966;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="p0mA4CcjupdVkxjA83lO-4" value="&lt;div style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;状态变化&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 13px&quot;&gt;&lt;font style=&quot;font-size: 13px&quot;&gt;条件触发&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=13;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="163.5" y="175" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="sjK3bK2tMlIkLwq6b-C--15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" parent="1" source="sjK3bK2tMlIkLwq6b-C--1" target="sjK3bK2tMlIkLwq6b-C--3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="sjK3bK2tMlIkLwq6b-C--1" value="判别状态" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#fff2cc;gradientColor=#ffd966;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--1" value="判别状态" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="293" y="240" width="79" height="40" as="geometry" />
         </mxCell>
         <mxCell id="sjK3bK2tMlIkLwq6b-C--18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" parent="1" source="sjK3bK2tMlIkLwq6b-C--3" target="sjK3bK2tMlIkLwq6b-C--16" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="sjK3bK2tMlIkLwq6b-C--3" value="改变返回值" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--3" value="改变返回值" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="294" y="300" width="77" height="30" as="geometry" />
         </mxCell>
         <mxCell id="xzRoaH3L9oUf6qEcPGD4-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="sjK3bK2tMlIkLwq6b-C--4" target="sjK3bK2tMlIkLwq6b-C--1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="sjK3bK2tMlIkLwq6b-C--4" value="监测寄存器读" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--4" value="监测寄存器读" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="289" y="182.5" width="87" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="sjK3bK2tMlIkLwq6b-C--16" value="生成符号值或具体值" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="sjK3bK2tMlIkLwq6b-C--16" value="生成符号值或具体值" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="153.5" y="297.5" width="120" height="35" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="dLi7Fgwwqg6hsa0oKMWj" name="简单寄存器">
-    <mxGraphModel dx="1038" dy="487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="0J7h_9KJz-B0SUihUd5I-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;" parent="1" source="0J7h_9KJz-B0SUihUd5I-1" target="0J7h_9KJz-B0SUihUd5I-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0J7h_9KJz-B0SUihUd5I-1" value="输入固件" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" parent="1" vertex="1">
+        <mxCell id="0J7h_9KJz-B0SUihUd5I-1" value="输入固件" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="140" width="100" height="50" as="geometry" />
         </mxCell>
         <mxCell id="0J7h_9KJz-B0SUihUd5I-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Lucida Console;fontSize=12;" parent="1" source="0J7h_9KJz-B0SUihUd5I-2" target="0J7h_9KJz-B0SUihUd5I-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="0J7h_9KJz-B0SUihUd5I-2" value="&lt;div&gt;特殊寄存器&lt;/div&gt;&lt;div&gt;特殊处理&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" parent="1" vertex="1">
+        <mxCell id="0J7h_9KJz-B0SUihUd5I-2" value="&lt;div&gt;特殊寄存器&lt;/div&gt;&lt;div&gt;特殊处理&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="210" width="100" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="0J7h_9KJz-B0SUihUd5I-3" value="&lt;div&gt;其余寄存器&lt;/div&gt;&lt;div&gt;交给符号执行&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" parent="1" vertex="1">
+        <mxCell id="0J7h_9KJz-B0SUihUd5I-3" value="&lt;div&gt;其余寄存器&lt;/div&gt;&lt;div&gt;交给符号执行&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="280" width="100" height="50" as="geometry" />
         </mxCell>
       </root>
