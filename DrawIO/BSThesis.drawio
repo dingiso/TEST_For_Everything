@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-01T02:55:15.944Z" agent="5.0 (Windows)" etag="wo7UNtjDImWtGp5R0uVk" version="18.1.3" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2022-06-03T11:27:10.973Z" agent="5.0 (Windows)" etag="D1VG0N4iW2cvnevQbviI" version="18.2.0" type="github" pages="6">
   <diagram id="nE82t7Sst-BgRWtlC8uI" name="系统结构">
-    <mxGraphModel dx="1221" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -19,7 +19,7 @@
         <mxCell id="rAHRE5KFRPkHDP4VCmhV-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Lucida Console;" parent="1" source="rAHRE5KFRPkHDP4VCmhV-2" target="rAHRE5KFRPkHDP4VCmhV-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rAHRE5KFRPkHDP4VCmhV-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Lucida Console;" parent="1" edge="1" target="rAHRE5KFRPkHDP4VCmhV-3">
+        <mxCell id="rAHRE5KFRPkHDP4VCmhV-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Lucida Console;" parent="1" target="rAHRE5KFRPkHDP4VCmhV-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="260" y="296" />
@@ -49,7 +49,7 @@
         <mxCell id="rAHRE5KFRPkHDP4VCmhV-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;" parent="1" source="rAHRE5KFRPkHDP4VCmhV-4" target="rAHRE5KFRPkHDP4VCmhV-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rAHRE5KFRPkHDP4VCmhV-4" value="&lt;div&gt;局域网报文&lt;/div&gt;&lt;div&gt;模拟模块&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" parent="1" vertex="1">
+        <mxCell id="rAHRE5KFRPkHDP4VCmhV-4" value="&lt;div&gt;局域网描述符&lt;/div&gt;&lt;div&gt;模拟模块&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" parent="1" vertex="1">
           <mxGeometry x="215" y="317" width="90" height="50" as="geometry" />
         </mxCell>
         <mxCell id="rAHRE5KFRPkHDP4VCmhV-5" value="模糊测试模块" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" parent="1" vertex="1">
@@ -67,10 +67,10 @@
         <mxCell id="rAHRE5KFRPkHDP4VCmhV-20" value="AFL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;fontFamily=Lucida Console;fontSize=18;" parent="1" vertex="1">
           <mxGeometry x="310" y="388.5" width="60" height="31.5" as="geometry" />
         </mxCell>
-        <mxCell id="Z4cevCgZ3b8IsnEyB7Fx-1" value="DMA 检测模块" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Z4cevCgZ3b8IsnEyB7Fx-1" value="DMA 检测模块" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="350" y="240" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z4cevCgZ3b8IsnEyB7Fx-2" value="寄存器处理模块" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="Z4cevCgZ3b8IsnEyB7Fx-2" value="寄存器处理模块" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="350" y="210" width="90" height="30" as="geometry" />
         </mxCell>
       </root>
