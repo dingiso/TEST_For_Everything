@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-06T14:47:23.476Z" agent="5.0 (Windows)" etag="-U76lf7DZTJU2gE_Nv2j" version="19.0.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-06T15:05:32.435Z" agent="5.0 (Windows)" etag="pgZ_xTLYJDVIjuc87uKx" version="19.0.0" type="github">
   <diagram id="jppOx9dZCNa06SVAA-la" name="Page-1">
     <mxGraphModel dx="1038" dy="485" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -82,6 +82,9 @@
         <mxCell id="yJxn-blwwG3f1hf65-Mr-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="yJxn-blwwG3f1hf65-Mr-22" target="yJxn-blwwG3f1hf65-Mr-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="yJxn-blwwG3f1hf65-Mr-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=15;" edge="1" parent="1" source="yJxn-blwwG3f1hf65-Mr-22" target="yJxn-blwwG3f1hf65-Mr-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="yJxn-blwwG3f1hf65-Mr-22" value="测试用例" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="200" y="480" width="120" height="60" as="geometry" />
         </mxCell>
@@ -105,7 +108,7 @@
         <mxCell id="yJxn-blwwG3f1hf65-Mr-27" value="&lt;div&gt;外设与MCU&lt;/div&gt;&lt;div&gt;交互接口&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
           <mxGeometry x="560" y="397" width="130" height="63" as="geometry" />
         </mxCell>
-        <mxCell id="yJxn-blwwG3f1hf65-Mr-30" value="DMA" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=15;" vertex="1" parent="1">
+        <mxCell id="yJxn-blwwG3f1hf65-Mr-30" value="DMA" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=15;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="440" y="227.5" width="140" height="55" as="geometry" />
         </mxCell>
         <mxCell id="yJxn-blwwG3f1hf65-Mr-32" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/construction-2-21/512/construction-industry-building-30-128.png;fontSize=15;" vertex="1" parent="1">
