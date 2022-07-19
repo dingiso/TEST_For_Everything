@@ -1,8 +1,11 @@
 # 派遣
 ## Dispatch
 在香山处理器中，派遣部分逻辑实际上共包括两级流水级:
+
 第一级 Dispatch 负责将指令分类并发送至定点、浮点与访存三类派遣队列（Dispatch Queue
+
 第二级 Dispatch2Rs 负责将对应类型的指令进一步根据不同的运算操作类型派遣至不同的保留站
+
 ```mermaid
 flowchart LR
 A(Dispatch) --> B(intDq)
@@ -16,8 +19,9 @@ D --> E
 Dispatch -> 三种DispatchQueue ：intDq, fpDq, lsDq -> Dispatch2Rs
 
 ## 参数
-1. DqSize : dispatch queue 的大小
-2. DeqWidth: 每一周期输出的指令数
+1. *DqSize : dispatch queue 的大小
+2. *DeqWidth: 每一周期输出的指令数
+
 > PS: EnqWidth == RenameWidth
 
 ## 算法
@@ -33,6 +37,7 @@ LIFO 的队列 包含了对于**robIdx**的判断
 1. Distinct
 
 不会重叠
+
 2. LessEXU
 
 在分发过程中EXU会越来越少
