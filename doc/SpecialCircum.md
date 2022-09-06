@@ -3,7 +3,7 @@
 
 ## 分支预测失败的处理
 
-![恢复过程](./assets/recovery.png)
+![恢复过程](./recovery.png)
 
 ### 前端
 
