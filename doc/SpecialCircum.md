@@ -47,4 +47,18 @@ Xiangshan 使用统一的PRF 两个重命名映射表，一个Rename时的（推
 
 ![WALK](./assets/Exception.png)
 
+#### ROBException Info
+
+1. robIdx
+2. exceptionVec : 16 位的异常向量
+3. flushPipe ： 像是exception 的指令，只是可以提交
+
+> This inst will flush all the pipe when commit, like exception but can commit
+
+5. replayInst ： 指令需不需要重新执行
+6. singleStep ： 取消指令融合 | stepie   | disable interrupts in singlestep
+7. crossPageIPFFix ： IBuffer IFU 中会用到， 主仓库没有实际用处
+8. trigger
+ 
+
 ## 中断的处理
