@@ -1,1 +1,34 @@
-<mxfile host="app.diagrams.net" modified="2022-10-12T12:27:56.270Z" agent="5.0 (X11)" version="20.4.0" etag="c32jH--ac7daCYpKa5Fk" type="github"><diagram id="_aU4LF-nLB1GaBovUCP4">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-10-12T12:33:54.605Z" agent="5.0 (X11)" etag="Z9wA3B_UwlHVh8ByKLGZ" version="20.4.0" type="github">
+  <diagram id="_aU4LF-nLB1GaBovUCP4" name="第 1 页">
+    <mxGraphModel dx="456" dy="742" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ry5DUwYTx4jPliDKJfSS-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="220" width="270" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="ry5DUwYTx4jPliDKJfSS-2" value="gcc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="140" y="280" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ry5DUwYTx4jPliDKJfSS-3" value="Zephyr-sdk" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="240" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ry5DUwYTx4jPliDKJfSS-5" value="binutils" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="280" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ry5DUwYTx4jPliDKJfSS-7" value="cross-ng" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="140" y="350" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ry5DUwYTx4jPliDKJfSS-9" value="gdb" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="270" y="350" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ry5DUwYTx4jPliDKJfSS-10" value="newlib" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="140" y="420" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ry5DUwYTx4jPliDKJfSS-11" value="sdk" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="420" width="100" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
