@@ -301,3 +301,27 @@ int pmp_hart_has_privs(CPURISCVState *env, target_ulong addr,
 
 https://github.com/sparcians/map/pull/434
 
+
+## FIX
+
+根据 `staging` 的 branch 中的更改，进行修复
+
+0. 并行访问 pmp， 所以时序简单
+1. pmp no rules : shortcut 给 `pmp_hart_has_privs_default`
+2. 改变 `pmp_hart_has_privs` 的返回值，去掉 default 的情况，只提供 match 与否
+3. 当部分匹配的时候 ，拒绝访问权限， `allowed_privs=0`
+4. **PMA** : 默认拥有初始值，可缓存，不支持原子操作， PMP默认无初始值
+5. TODO: 与 `tlb` 的交互
+
+**qemu-issue**
+[check redundant](https://gitlab.com/qemu-project/qemu/-/issues/1733)
+[variable name]()
+
+## L2TLB
+L2 TLB 包含四个主要单元：
+
+1. Page Cache：缓存页表，Sv39 的 3 层页表全部且分开缓存，可以一拍完成 3 层信息的查询
+2. Page Walker：查询内存中的前两级页表，本质为状态机
+3. Last Level Page Walker：查询内存中的最后一级页表
+5. Prefetcher：预取器
+
